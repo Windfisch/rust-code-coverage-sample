@@ -20,7 +20,7 @@ cargo build
 
 cargo run
 
-grcov . -s . -t lcov --llvm --branch --ignore-not-existing -o ./target/debug/coverage.lcov
+grcov . -s . --keep-only "src/**/*" -t lcov --llvm --branch --ignore-not-existing -o ./target/debug/coverage.lcov
 
 genhtml --rc lcov_branch_coverage=1 -o target/debug/lcov_report --show-details --highlight --ignore-errors source --legend target/debug/coverage.lcov
 
